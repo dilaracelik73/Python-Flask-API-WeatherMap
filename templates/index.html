@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Weather Report</title>
-<!-- style kısmında ekrana yerleşim ve resmin tüm ekranda olma kontrolleri yapıldı.-->
-    <style>
-        body {
-            display: flex;
+    <title>Weather App</title>
+</head>
+<body>
+<!-- style kısmında ekrana gelen kısmın ekranda nasıl görüneceği ve fullscreen olarak resim yerleştirme işlemleri yapılmıştır.-->
+<style>
+    body { display: flex;
             justify-content: center;
             align-items: center;
-            height: 70vh;
-            margin: 0; }
-    </style>
-    <style>
+            height: 80vh;
+            margin: 0;}
+
+        .centered-form {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9; }
+
+        .centered-button {
+            margin-top: 10px;}
+</style>
+ <style>
         body, html {
             height: 100%;
             margin: 0;}
@@ -27,24 +38,22 @@
         .fullscreen-bg-img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-        }
+            object-fit: cover;}
     </style>
-<body>
 <div class="fullscreen-bg">
-        <img src="https://images.pexels.com/photos/314726/pexels-photo-314726.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        <img src="https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
              alt="Full-Screen Background Image" class="fullscreen-bg-img">
     </div>
-<div class="center">
-
-    <!-- bu bölümde gelen bilgilerin api key aracılığıyla çekimi ve kullanıcıya sunumu sağlanmıştır-->
-<h1>Weather Stats for - {{ location }} </h1>
-    <p  style="text-align:center">{{ date_time }}</p>
-    <hr>
-    <p style="color:black;"><b>Current Temperature: </b><span style="color: black;">{{ temperature }} °C</span></p>
-    <p style="color:black;"><b>Current Weather Description: </b><span style="color: black;"> {{ weather_desc }}</span></p>
-    <p style="color:black;"><b>Current Humidity:</b><span style="color: black;"> {{ humidity }}%</span></p>
-    <p style="color:black;"><b>Current Wind Speed:</b><span style="color: black;"> {{ wind_speed }} kmph</span></p>
-</div>
+<!-- form kısmında veri alma ve çekme işlemleri olduğu için (değişim var) post metodu kullanıldı.-->
+    <form method="POST" action="/">
+        <h1>Welcome to the Website </h1>
+        <hr>
+        <h3 style="background-color: # FFA07A">Please Enter the City for Which You Want to Retrieve Weather Data </h3>
+        <div>
+            <label for="location" text-align="center"><b>Enter the city name: </b>   </label>
+            <input type="text" name="location" required>
+            <button type="submit"><b>Get Result</b></button>
+        </div>
+    </form>
 </body>
 </html>
