@@ -2,21 +2,19 @@
 <html>
 <head>
     <title>Weather Report</title>
-
+<!-- style kısmında ekrana yerleşim ve resmin tüm ekranda olma kontrolleri yapıldı.-->
     <style>
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 70vh;
-            margin: 0;
-        }
+            margin: 0; }
     </style>
     <style>
         body, html {
             height: 100%;
-            margin: 0;
-        }
+            margin: 0;}
 
         .fullscreen-bg {
             position: fixed;
@@ -24,8 +22,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
-        }
+            z-index: -1;}
 
         .fullscreen-bg-img {
             width: 100%;
@@ -33,15 +30,14 @@
             object-fit: cover;
         }
     </style>
-
 <body>
 <div class="fullscreen-bg">
-        <img src="https://images.pexels.com/photos/314726/pexels-photo-314726.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Full-Screen Background Image" class="fullscreen-bg-img">
+        <img src="https://images.pexels.com/photos/314726/pexels-photo-314726.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+             alt="Full-Screen Background Image" class="fullscreen-bg-img">
     </div>
-
-
 <div class="center">
 
+    <!-- bu bölümde gelen bilgilerin api key aracılığıyla çekimi ve kullanıcıya sunumu sağlanmıştır-->
 <h1>Weather Stats for - {{ location }} </h1>
     <p  style="text-align:center">{{ date_time }}</p>
     <hr>
